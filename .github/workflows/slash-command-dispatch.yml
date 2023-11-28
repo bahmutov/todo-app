@@ -15,6 +15,17 @@ jobs:
           echo off
           echo '${{ toJson(github.event) }}'
 
+      # we only know the pull request number, like 12, 20, etc
+      # but to trigger the workflow we need the branch name
+      # use personal token to be able to query the branch by PR number
+      # https://github.com/bahmutov/get-branch-name-by-pr
+      - name: Find the PR branch name 🔎
+        uses: bahmutov/get-branch-name-by-pr@v1
+        id: pr
+        with:
+          repo-token: ${{ secrets.PERSONAL_TOKEN }}
+          pr-id: ${{ github.event.issue.number }}
+
       - name: Slash Command Dispatch
         # https://github.com/peter-evans/slash-command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
@@ -27,5 +38,6 @@ jobs:
           static-args: |
             repository=${{ github.repository }}
             comment-id=${{ github.event.comment.id }}
+            ref=${{ steps.pr.outputs.branch }}
           commands: |
             cypress
