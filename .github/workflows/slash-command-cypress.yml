@@ -38,6 +38,7 @@ jobs:
         env:
           REPO_NAME: todo-app
           PR_NUMBER: ${{ github.event.client_payload.pull_request.number }}
+          REF: ${{ github.ref }}
           FEEDBACK_COMMENT_ID: ${{ github.event.client_payload.github.payload.comment.id }}
         with:
           # unfortunately we need to use a personal token to trigger
