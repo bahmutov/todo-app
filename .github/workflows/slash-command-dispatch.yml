@@ -14,8 +14,10 @@ jobs:
         # https://github.com/peter-evans/slash-command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
         with:
-          # use personal token to be able to set reactions
+          # use personal token to be able to trigger more workflows
           token: ${{ secrets.PERSONAL_TOKEN }}
+          # the default token to post reaction emoji in the comment
+          reaction-token: ${{ secrets.GITHUB_TOKEN }}
           permission: none
           static-args: |
             repository=${{ github.repository }}
