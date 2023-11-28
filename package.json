@@ -1,0 +1,28 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple TodoMVC without any tests",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --static . --watch data.json --middlewares ./node_modules/json-server-reset"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/todo-app/issues"
+  },
+  "homepage": "https://github.com/bahmutov/todo-app#readme",
+  "dependencies": {
+    "json-server": "0.17.4",
+    "json-server-reset": "1.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0"
+  }
+}
