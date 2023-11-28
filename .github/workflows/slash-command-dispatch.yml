@@ -16,8 +16,8 @@ jobs:
         with:
           # use personal token to be able to trigger more workflows
           token: ${{ secrets.PERSONAL_TOKEN }}
-          # the default token to post reaction emoji in the comment
-          reaction-token: ${{ secrets.GITHUB_TOKEN }}
+          # the personal token to post the comment emoji
+          reaction-token: ${{ secrets.PERSONAL_TOKEN }}
           permission: none
           static-args: |
             repository=${{ github.repository }}
