@@ -14,8 +14,8 @@ jobs:
         # https://github.com/peter-evans/slash-command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
         with:
-          # the built-in GitHub token when running actions
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # use personal token to be able to set reactions
+          token: ${{ secrets.PERSONAL_TOKEN }}
           permission: none
           static-args: |
             repository=${{ github.repository }}
