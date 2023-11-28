@@ -10,6 +10,11 @@ jobs:
   slash_command_dispatch:
     runs-on: ubuntu-latest
     steps:
+      - name: Print event 🖨️
+        run: |
+          echo off
+          echo '${{ toJson(github.event) }}'
+
       - name: Slash Command Dispatch
         # https://github.com/peter-evans/slash-command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
