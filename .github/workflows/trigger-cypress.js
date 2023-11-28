@@ -1,11 +1,11 @@
 'use strict'
 
 module.exports = ({ github, core }) => {
-  const repo = process.env.REPO_NAME
-
   const payload = {
-    repo,
+    // the name of this repo
+    repo: process.env.REPO_NAME,
     pullRequestNumber: process.env.PR_NUMBER,
+    ref: process.env.REF,
     feedbackCommentId: process.env.FEEDBACK_COMMENT_ID,
   }
 
