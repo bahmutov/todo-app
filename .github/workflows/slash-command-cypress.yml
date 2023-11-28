@@ -20,7 +20,14 @@ jobs:
           echo '${{ toJson(github.event.client_payload.slash_command) }}'
 
       - name: Check out the repo 🛎️
+        # https://github.com/actions/checkout
         uses: actions/checkout@v4
+        with:
+          # only check out one JS file
+          # that we use to trigger workflow in the tests repo
+          sparse-checkout: |
+            .github/workflows/trigger-cypress.js
+          sparse-checkout-cone-mode: false
 
       - name: Trigger Cypress run
         # https://github.com/actions/github-script
