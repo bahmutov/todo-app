@@ -33,8 +33,10 @@ jobs:
         # https://github.com/actions/github-script
         uses: actions/github-script@v6
         id: trigger
+        # pass this repo's name and PR number
+        # plus the comment ID so the tests workflow can post results back
         env:
-          REPO_NAME: todo-app-tests
+          REPO_NAME: todo-app
           PR_NUMBER: ${{ github.event.client_payload.pull_request.number }}
           FEEDBACK_COMMENT_ID: ${{ github.event.client_payload.github.payload.comment.id }}
         with:
