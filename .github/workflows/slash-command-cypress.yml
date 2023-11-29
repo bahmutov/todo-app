@@ -19,6 +19,11 @@ jobs:
           echo off
           echo '${{ toJson(github.event.client_payload.slash_command) }}'
 
+      - name: Print PR event 🖨️
+        run: |
+          echo off
+          echo '${{ toJson(github.event.client_payload.pull_request) }}'
+
       - name: Check out the repo 🛎️
         # https://github.com/actions/checkout
         uses: actions/checkout@v4
@@ -40,6 +45,7 @@ jobs:
           PR_NUMBER: ${{ github.event.client_payload.pull_request.number }}
           REF: ${{ github.event.client_payload.slash_command.args.named.ref }}
           FEEDBACK_COMMENT_ID: ${{ github.event.client_payload.github.payload.comment.id }}
+          COMMIT_SHA: ${{ github.event.client_payload.pull_request.head.sha }}
         with:
           # unfortunately we need to use a personal token to trigger
           # a workflow in another repo, cannot use just GITHUB_TOKEN

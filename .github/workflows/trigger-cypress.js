@@ -7,6 +7,7 @@ module.exports = ({ github, core }) => {
     pullRequestNumber: process.env.PR_NUMBER,
     ref: process.env.REF,
     feedbackCommentId: process.env.FEEDBACK_COMMENT_ID,
+    commit: process.env.COMMIT_SHA,
   }
 
   core.info(JSON.stringify(payload))
