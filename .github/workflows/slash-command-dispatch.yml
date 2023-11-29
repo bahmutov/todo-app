@@ -39,5 +39,6 @@ jobs:
             repository=${{ github.repository }}
             comment-id=${{ github.event.comment.id }}
             ref=${{ steps.pr.outputs.branch }}
+            commit-id=${{ github.sha }}
           commands: |
             cypress
