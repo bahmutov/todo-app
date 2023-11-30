@@ -2,7 +2,7 @@
 
 > A simple TodoMVC without any tests
 
-📝 Read the blog post [Separate Application And Tests Repos GitHub Actions Setup](https://glebbahmutov.com/blog/two-repo-github-actions-setup/)
+📝 Read the blog post [Separate Application And Tests Repos GitHub Actions Setup](https://glebbahmutov.com/blog/two-repo-github-actions-setup/) and [Set Commit Status In Another Repo](https://glebbahmutov.com/blog/set-commit-status-in-another-repo/)
 
 Test are in the repo [bahmutov/todo-app-tests](https://github.com/bahmutov/todo-app-tests)
 
